@@ -26,10 +26,12 @@ class TadpolesController < ApplicationController
   end
 
   def edit
+    @tadpole = Tadpole.find(params[:id])
     @ponds = Pond.all
   end
 
   def update
+    @tadpole = Tadpole.find(params[:id])
     @tadpole.update(tadpole_params)
     redirect_to('/tadpoles')
   end

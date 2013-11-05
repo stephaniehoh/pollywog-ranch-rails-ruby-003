@@ -8,6 +8,6 @@
 <strong><%= link_to 'Evolve to Frog', @tadpole, :method => 'evolve' %></strong>
 <br>
 <br>
-<a href="/tadpoles">Back</a> | 
-<a href="/tadpoles/<%= @tadpole.id %>/edit">Edit</a> | 
+<%= link_to 'Back', tadpoles_path(@tadpoles) %> | 
+<%= link_to 'Edit', edit_tadpole_path(@tadpole) %> | 
 <%= link_to 'Delete', @tadpole, :method => 'delete' %>
