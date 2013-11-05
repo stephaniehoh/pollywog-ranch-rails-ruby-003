@@ -1,0 +1,13 @@
+<h1><%= @tadpole.name %> Tadpole</h1>
+
+<p>color: <%= @tadpole.color %></p>
+<p>parent: <a href="/frogs/<%= @tadpole.frog_id %>"><%= @tadpole.frog.name %></a></p>
+<p>lives: <a href="/ponds/<%= @tadpole.frog_id %>"><%= @tadpole.frog.pond.name %></a></p>
+
+
+<strong><%= link_to 'Evolve to Frog', @tadpole, :method => 'evolve' %></strong>
+<br>
+<br>
+<a href="/tadpoles">Back</a> | 
+<a href="/tadpoles/<%= @tadpole.id %>/edit">Edit</a> | 
+<%= link_to 'Delete', @tadpole, :method => 'delete' %>
