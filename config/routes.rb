@@ -1,6 +1,18 @@
 PollywogRanchRailsRuby003::Application.routes.draw do
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
+  resources :ponds
+  resources :frogs do
+    resources :tadpoles
+  end
+
+  resources :tadpoles, :except => :new
+
+  post '/tadpoles/:id' => 'tadpoles#evolve'
+
+end
+  # get '/frogs' => 'frogs#index'
+
 
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
@@ -53,4 +65,4 @@ PollywogRanchRailsRuby003::Application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
-end
+
