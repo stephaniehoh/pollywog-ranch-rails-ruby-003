@@ -3,10 +3,10 @@ class TadpolesController < ApplicationController
   def index
     @tadpoles = Tadpole.all
 
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @tadpoles }
-    end
+    # respond_to do |format|
+    #   format.html # index.html.erb
+    #   format.json { render json: @tadpoles }
+    # end
   end 
 
   def new

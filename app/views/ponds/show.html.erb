@@ -1,12 +1,12 @@
 <h1><%= @pond.name %> Pond</h1>
-<p>water type: <%= @pond.water_type %></p>
+<p>Water type: <%= @pond.water_type %></p>
 <p>Resident frogs and their tadpoles:</p>
 <ol>
   <% @pond.frogs.each do |frog| %>
-    <li><a href="/frogs/<%= frog.id %>"><%= frog.name %> frog</a>
+    <li><%= link_to frog.name, frog_path(frog.id) %> (Frog)</a>
       <ol>
         <% frog.tadpoles.each do |tadpole| %>
-          <li><a href="/tadpoles/<%= tadpole.id %>"><%= tadpole.name %> tadpole</a></li>
+          <li><%= link_to tadpole.name, tadpole_path(tadpole.id) %> (Tadpole)</a></li>
         <% end %>
       </ol>
     </li>

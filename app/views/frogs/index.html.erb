@@ -1,7 +1,7 @@
 <h1>Frogs</h1>
 <% @frogs.each do |frog| %>
-  <p><a href="/frogs/<%= frog.id %>"><%= frog.name %></a></p>
+  <p><%= link_to frog.name, frog_path(frog.id) %></a></p>
 <% end %>
 <br>
-<p><strong><a href="/frogs/new">Create a new frog</a></strong></p>
+<p><strong><%= link_to 'Create a new frog', new_frog_path(@frog) %></strong></p>
 

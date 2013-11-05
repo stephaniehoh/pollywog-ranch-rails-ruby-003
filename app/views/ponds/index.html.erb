@@ -1,6 +1,6 @@
  <h1>Ponds</h1>
 <% @ponds.each do |pond| %>
-  <p><a href="/ponds/<%= pond.id %>"><%= pond.name %></a></p>
+  <p><%= link_to pond.name, pond_path(pond.id) %></p>
 <% end %>
 <br>
-<p><strong><a href="/ponds/new">Create a new pond</a><strong></p>
+<p><strong><%= link_to 'Create a new pond', new_pond_path(@pond) %><strong></p>
